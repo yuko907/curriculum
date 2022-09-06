@@ -1,14 +1,11 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
 public class Main {
-
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
 
@@ -47,15 +44,21 @@ public class Main {
 		{
 //      問⑦ 配列arrayDateに今の年・月・日を入れてください。
            Calendar cal = Calendar.getInstance();
-           Date arrayDate = new Date();
+           int[] arrayDate = {cal.get(Calendar.YEAR),cal.get(Calendar.MONTH)+1,cal.get(Calendar.DATE)};
+           
            
 //      問⑧ 配列arrayDateをList型に変更しましょう。
-           List<Date> ListarrayDate = Arrays.asList(arrayDate);
+           ArrayList<Integer> ListarrayDate = new ArrayList<>(arrayDate.length);
+           for(int s=0;s<arrayDate.length;s++) {
+        	   ListarrayDate.add(arrayDate[s]);
+           }
+
 
 //      問⑨ 上記で格納した要素を繰り返しで出力しましょう。
            for(int i = 0; i< ListarrayDate.size(); i++) {
         	   System.out.println(ListarrayDate.get(i));
            }
+           
 		}
 	}
 
